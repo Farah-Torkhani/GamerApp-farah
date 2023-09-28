@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/navigationIcon"
+            android:layout_width="69dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:src="@drawable/navigatebefore_foreground"
+            android:layout_gravity="start"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="46dp"
+        android:layout_margin="18dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ForgotText"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="Enter the code  sent to you by Email or Mobile Number"
+            android:textColor="@color/Secondary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="60dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/digit1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:pinLineColors="@color/colorPrimary" />
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/digit2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:pinLineColors="@color/colorPrimary" />
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/digit3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:pinLineColors="@color/colorPrimary" />
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/digit4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:pinLineColors="@color/colorPrimary" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_primary_button"
+        android:gravity="center"
+        android:clickable="true"
+        />
+
+    <LinearLayout
+        android:layout_width="357dp"
+        android:layout_height="53dp"
+        android:layout_margin="8dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/descriptiontext"
+            android:layout_width="380dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="didn't receive a verification code ? "
+            android:textColor="@color/Secondary"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/buttonresendcode"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:text="Resend code"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
