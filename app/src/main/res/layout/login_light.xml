@@ -5,14 +5,21 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_margin="0dp"
     >
+    <Switch
+        android:id="@+id/switchDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dark Mode"
+        android:layout_gravity="end"
+        />
 
     <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="194dp"
-                android:layout_height="237dp"
-                app:srcCompat="@drawable/ic_logo" />
+        android:id="@+id/imageView"
+        android:layout_width="186dp"
+        android:layout_height="221dp"
+        app:srcCompat="@drawable/ic_logo" />
               <LinearLayout
             android:layout_width="360dp"
             android:layout_height="75dp"

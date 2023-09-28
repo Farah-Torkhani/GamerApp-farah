@@ -3,6 +3,8 @@
     <style name="Base.Theme.GamerApp_Farah" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
     <style name="Theme.GamerApp_Farah" parent="Base.Theme.GamerApp_Farah" />
