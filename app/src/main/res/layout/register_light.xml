@@ -10,6 +10,32 @@
     tools:context=".RegisterScreen"
     >
 
+    <LinearLayout
+        android:layout_width="378dp"
+        android:layout_height="49dp">
+
+        <ImageView
+            android:id="@+id/navigationIcon"
+            android:layout_width="69dp"
+            android:layout_height="53dp"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:src="@drawable/navigatebefore_foreground" />
+
+        <Space
+            android:layout_width="45dp"
+            android:layout_height="68dp"
+            android:layout_weight="1" />
+
+
+        <Switch
+            android:id="@+id/switchDarkMode"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
+            android:layout_gravity="end"
+            android:gravity="end" />
+
+    </LinearLayout>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="157dp"
@@ -34,6 +60,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="349dp"
                 android:layout_height="54dp"
+                android:id="@+id/fullnameinput"
                 android:background="@drawable/edit_textbg"
                 android:baselineAligned="false"
                 android:hint="FullName"
@@ -60,6 +87,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="349dp"
                 android:layout_height="54dp"
+                android:id="@+id/emailinput"
                 android:background="@drawable/edit_textbg"
                 android:baselineAligned="false"
                 android:hint="Email"
@@ -89,6 +117,7 @@
                 android:layout_width="349dp"
                 android:layout_height="54dp"
                 android:background="@drawable/edit_textbg"
+                android:id="@+id/passwordInput"
                 android:hint="Password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -114,6 +143,7 @@
                 android:layout_width="349dp"
                 android:layout_height="54dp"
                 android:background="@drawable/edit_textbg"
+                android:id="@+id/confirmpasswordInput"
                 android:hint="Confirm Password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>

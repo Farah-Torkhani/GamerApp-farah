@@ -1,10 +1,12 @@
 package tn.esprit.gamerapp_farah
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.text.style.UnderlineSpan
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,6 +52,14 @@ class otpScreen : AppCompatActivity(){
         }
 
         paragraphTextView.text = spannableStringBuilder
+
+        val paragraphTextView1 = findViewById<ImageView>(R.id.navigationIcon)
+        paragraphTextView1.setOnClickListener {
+
+            val intent = Intent(this, ForgetPassword::class.java)
+            startActivity(intent)
+
+        }
     }
 
 }
