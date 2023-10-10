@@ -10,8 +10,10 @@ import android.text.style.UnderlineSpan
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 
@@ -19,6 +21,12 @@ import com.google.android.material.textfield.TextInputEditText
 class RegisterScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val themeResId = when (AppCompatDelegate.getDefaultNightMode()) {
+            AppCompatDelegate.MODE_NIGHT_YES -> R.style.Base_Theme_GamerApp_Farah_dark
+            else -> R.style.Base_Theme_GamerApp_Farah
+        }
+        setTheme(themeResId)
+
         setContentView(R.layout.register_light)
 
         val primaryColor = ContextCompat.getColor(applicationContext,R.color.colorPrimary)
@@ -27,7 +35,36 @@ class RegisterScreen : AppCompatActivity() {
         val wordsToUnderline = listOf("Conditions", "privacy", "and", "Terms")
         val colorSpan = ForegroundColorSpan(primaryColor)
         val spannableStringBuilder = SpannableStringBuilder(paragraphText)
+
+
+
         val RegisterTextView  = findViewById<Button>(R.id.RegisterButton)
+
+
+
+
+        val switchDarkMode = findViewById<Switch>(R.id.switchDarkMode)
+
+        var isDarkModeEnabled = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+
+        switchDarkMode.isChecked = isDarkModeEnabled
+
+        switchDarkMode.setOnClickListener { view ->
+            // Check if the state is changing
+            val newState = switchDarkMode.isChecked
+            if (newState != isDarkModeEnabled) {
+                isDarkModeEnabled = newState
+                if (isDarkModeEnabled) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    Log.d("", "This is a dark mode")
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    Log.d("", "This is a light mode")
+                }
+
+            }
+            recreate()
+        }
 
         for (word in wordsToUnderline) {
             val start = paragraphText.indexOf(word)
@@ -83,5 +120,6 @@ class RegisterScreen : AppCompatActivity() {
             Log.d("confirm pass", CpassText)
         }
     }
+
 
 }

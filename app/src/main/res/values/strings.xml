@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GamerApp_Farah</string>
+    <string name="Required" />
+    <string name="required" />
 </resources>

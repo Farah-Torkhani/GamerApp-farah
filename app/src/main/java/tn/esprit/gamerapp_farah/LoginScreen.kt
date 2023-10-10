@@ -15,20 +15,43 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 
 
+
+
 class LoginScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         val themeResId = when (AppCompatDelegate.getDefaultNightMode()) {
-            AppCompatDelegate.MODE_NIGHT_YES -> R.style.Base_Theme_GamerApp_Farah
-            else -> R.style.Theme_GamerApp_Farah
+            AppCompatDelegate.MODE_NIGHT_YES -> R.style.Base_Theme_GamerApp_Farah_dark
+            else -> R.style.Base_Theme_GamerApp_Farah
         }
 
-        // Set the app theme based on the determined theme resource ID
-        setTheme(themeResId)
+        setTheme(themeResId) // Set the appropriate theme before calling setContentView
 
         setContentView(R.layout.login_light)
+        val switchDarkMode = findViewById<Switch>(R.id.switchDarkMode)
 
+        var isDarkModeEnabled = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+
+        switchDarkMode.isChecked = isDarkModeEnabled
+
+        switchDarkMode.setOnClickListener { view ->
+            // Check if the state is changing
+            val newState = switchDarkMode.isChecked
+            if (newState != isDarkModeEnabled) {
+                isDarkModeEnabled = newState
+                if (isDarkModeEnabled) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    Log.d("", "This is a dark mode")
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    Log.d("", "This is a light mode")
+                }
+
+            }
+            recreate()
+        }
         val primaryColor = ContextCompat.getColor(applicationContext, R.color.colorPrimary)
         val paragraphTextView = findViewById<TextView>(R.id.buttonregister)
         val loginTextView  = findViewById<Button>(R.id.loginButton)
@@ -51,25 +74,11 @@ class LoginScreen : AppCompatActivity() {
         }
 
         paragraphTextView.text = spannableStringBuilder
+//dark mode switch
 
-        val switchDarkMode = findViewById<Switch>(R.id.switchDarkMode)
-        switchDarkMode.isChecked = when (AppCompatDelegate.getDefaultNightMode()) {
-            AppCompatDelegate.MODE_NIGHT_YES -> true
-            else -> false
-        }
 
-        val switch = findViewById<Switch>(R.id.switchDarkMode)
-        switch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // Switch to dark theme
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                // Switch to light theme
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-            recreate()
 
-        }
+
             paragraphTextView1.setOnClickListener {
 
                 val intent = Intent(this, ForgetPassword::class.java)
