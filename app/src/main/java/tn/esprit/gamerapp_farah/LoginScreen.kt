@@ -79,7 +79,7 @@ class LoginScreen : AppCompatActivity() {
 
 
 
-            paragraphTextView1.setOnClickListener {
+            paragraphTextView1.setOnClickListener() {
 
                 val intent = Intent(this, ForgetPassword::class.java)
                 startActivity(intent)

@@ -51,7 +51,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:gravity="center_horizontal"
-                app:startIconDrawable="@drawable/mail_foreground"
                 app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -60,6 +59,7 @@
                     android:layout_width="349dp"
                     android:layout_height="54dp"
                     android:background="@drawable/edit_textbg"
+                    android:drawableStart="@drawable/mail_foreground"
                     android:baselineAligned="false"
                     android:hint="Email"
                     app:boxStrokeColor="@color/transparent"
@@ -78,17 +78,17 @@
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:gravity="center_horizontal"
-            app:endIconMode="password_toggle"
             app:endIconTint="@color/colorPrimary"
-            app:startIconDrawable="@drawable/lock_foreground"
             app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="349dp"
-                android:layout_height="54dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/passwordinput"
                 android:background="@drawable/edit_textbg"
                 android:hint="Password"
+                android:drawableStart="@drawable/lock_foreground"
+                android:drawableEnd="@drawable/eye_foreground"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
