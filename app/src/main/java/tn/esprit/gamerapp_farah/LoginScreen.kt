@@ -73,19 +73,6 @@ class LoginScreen : AppCompatActivity() {
             }
         }
 
-        paragraphTextView.text = spannableStringBuilder
-//dark mode switch
-
-
-
-
-            paragraphTextView1.setOnClickListener() {
-
-                val intent = Intent(this, ForgetPassword::class.java)
-                startActivity(intent)
-
-            }
-
 
         paragraphTextView.setOnClickListener {
 

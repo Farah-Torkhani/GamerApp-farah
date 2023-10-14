@@ -32,6 +32,8 @@
         <activity android:name=".ForgetPassword" >
         </activity>
 
+        <activity android:name=".HomeActivity" >
+        </activity>
     </application>
 
 </manifest>
