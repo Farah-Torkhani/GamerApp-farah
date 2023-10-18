@@ -4,9 +4,12 @@ package tn.esprit.gamerapp_farah
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import tn.esprit.gamerapp_farah.databinding.HomeActivityBinding
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -19,7 +22,15 @@ private lateinit var binding1: HomeActivity
         binding = HomeActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-binding.bt1.setOnClickListener{
+        val toolbar = findViewById<Toolbar>(R.id.app_bar)
+        setSupportActionBar(toolbar)
+        val navView: BottomNavigationView = binding.bottomNavigation
+
+
+
+
+
+        binding.bt1.setOnClickListener{
     goToFragment(News())
 }
 
@@ -27,8 +38,6 @@ binding.bt1.setOnClickListener{
         binding.bt2.setOnClickListener{
             goToFragment(Store())
         }
-
-
 
     }
 
@@ -39,9 +48,9 @@ binding.bt1.setOnClickListener{
         fragmentManager.beginTransaction().replace(R.id.fragmentContainer,fragment).commit()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.custom_menu, menu) // Inflate your custom menu XML
-        return true
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.custom_menu, menu)
+        return true;
     }
 
 

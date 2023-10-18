@@ -10,15 +10,38 @@
 
 
 
-        <!-- Use MaterialToolbar with required attributes -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/view_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/MyDarkToolbarStyle"
+        tools:ignore="MissingConstraints">
+
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:title="Gamer"
-        app:menu="@menu/custom_menu"
-        app:layout_scrollFlags="scroll|enterAlways" />
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <!-- Add the TextView for your title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gamer"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white" />
+
+
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/baseline_notifications_24"
+                android:layout_gravity="end"
+                android:contentDescription="Notification Icon" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
 
 
 
@@ -54,4 +77,17 @@
             android:text="Fragment 2"
             android:textSize="20sp" />
     </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/bottom_navigation_menu" />
+
 </LinearLayout>
