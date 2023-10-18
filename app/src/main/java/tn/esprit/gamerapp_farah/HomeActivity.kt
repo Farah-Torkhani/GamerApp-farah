@@ -11,6 +11,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import tn.esprit.gamerapp_farah.databinding.HomeActivityBinding
 
 
+
+
 class HomeActivity : AppCompatActivity() {
 
 private  lateinit var fragmentManager: FragmentManager
@@ -28,16 +30,28 @@ private lateinit var binding1: HomeActivity
 
 
 
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
 
-        binding.bt1.setOnClickListener{
-    goToFragment(News())
-}
-
-
-        binding.bt2.setOnClickListener{
-            goToFragment(Store())
+        bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.item_news -> {
+                    goToFragment(News())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.item_store -> {
+                    goToFragment(Store())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.item_profile -> {
+                    goToFragment(profile())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                else -> false
+            }
         }
+
+
 
     }
 
