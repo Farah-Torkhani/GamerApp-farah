@@ -17,6 +17,9 @@ class Store : Fragment(R.layout.fragment_store) {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_store, container, false)
+
+
     }
+
 
 }
