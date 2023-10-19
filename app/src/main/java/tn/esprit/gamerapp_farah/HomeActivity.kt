@@ -3,6 +3,8 @@ package tn.esprit.gamerapp_farah
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -31,20 +33,23 @@ private lateinit var binding1: HomeActivity
 
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
+        val cartIcon = findViewById<ImageView>(R.id.shop)
 
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_news -> {
                     goToFragment(News())
+                    cartIcon.visibility = View.GONE
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.item_store -> {
                     goToFragment(Store())
+                    cartIcon.visibility = View.VISIBLE
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.item_profile -> {
                     goToFragment(profile())
+                    cartIcon.visibility = View.GONE
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> false
@@ -66,6 +71,7 @@ private lateinit var binding1: HomeActivity
         menuInflater.inflate(R.menu.custom_menu, menu)
         return true;
     }
+
 
 
 
